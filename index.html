@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chat Laskmit</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="chat-app">
+      <header class="chat-header">
+        <h1 class="chat-title">Chat Laskmit</h1>
+        <p class="chat-points">Puntos: <span id="points-value">30</span></p>
+      </header>
+
+      <section id="messages" class="chat-messages" aria-live="polite"></section>
+
+      <form id="chat-form" class="chat-form">
+        <div class="chat-tools">
+          <button id="buy-points-button" class="buy-points-button" type="button">
+            Comprar Puntos
+          </button>
+
+          <select id="help-words-select" class="help-words-select" aria-label="Palabras de ayuda">
+            <option value="">Palabras de ayuda</option>
+            <option value="Necesito">Necesito</option>
+            <option value="Que es">Que es</option>
+            <option value="Donde esta">Donde esta</option>
+            <option value="Quien es">Quien es</option>
+            <option value="Cambia">Cambia</option>
+            <option value="Toma nota">Toma nota</option>
+          </select>
+        </div>
+
+        <input
+          id="message-input"
+          name="message"
+          type="text"
+          placeholder="Escribe un mensaje..."
+          autocomplete="off"
+          required
+        />
+        <button class="send-button" type="submit" aria-label="Enviar mensaje">
+          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+            <path d="M21 3L10 14" />
+            <path d="M21 3L14 21L10 14L3 10L21 3Z" />
+          </svg>
+        </button>
+      </form>
+    </main>
+
+    <script src="chat_laskmit.js"></script>
+  </body>
+</html>

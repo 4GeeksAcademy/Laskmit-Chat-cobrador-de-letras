@@ -1,0 +1,201 @@
+:root {
+  color-scheme: light;
+  --bg: #f2f5f9;
+  --panel: #ffffff;
+  --text: #1e293b;
+  --muted: #64748b;
+  --border: #d9e2ec;
+  --primary: #2563eb;
+  --primary-hover: #1d4ed8;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  background: linear-gradient(150deg, #f8fafc 0%, #e2e8f0 100%);
+  color: var(--text);
+}
+
+.chat-app {
+  width: min(460px, 47vw);
+  height: min(760px, 92vh);
+  background: var(--panel);
+  border: 2px solid var(--primary);
+  border-radius: 14px;
+  box-shadow: 0 18px 45px rgba(15, 23, 42, 0.1);
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  overflow: hidden;
+}
+
+.chat-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem 1.2rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.chat-title {
+  margin: 0;
+  font-size: 1.2rem;
+}
+
+.chat-points {
+  margin: 0;
+  color: #ffffff;
+  font-weight: 600;
+  background: var(--primary);
+  border-radius: 999px;
+  padding: 0.35rem 0.7rem;
+  line-height: 1;
+}
+
+.chat-points.is-warning {
+  background: #facc15;
+  color: #1f2937;
+}
+
+.chat-points.is-danger {
+  background: #ef4444;
+  color: #ffffff;
+}
+
+.chat-messages {
+  padding: 1rem;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+}
+
+.message {
+  max-width: 78%;
+  padding: 0.65rem 0.85rem;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  background: #f8fafc;
+  word-wrap: break-word;
+}
+
+.message.user {
+  margin-left: auto;
+  background: #dbeafe;
+  border-color: #bfdbfe;
+}
+
+.message.system {
+  color: var(--muted);
+  font-style: italic;
+}
+
+.chat-form {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 0.65rem;
+  padding: 0.9rem;
+  border-top: 1px solid var(--border);
+}
+
+.chat-tools {
+  grid-column: 1 / -1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.7rem;
+}
+
+.buy-points-button {
+  width: auto;
+  flex: 0 0 auto;
+  border: 1px solid #bfdbfe;
+  border-radius: 10px;
+  padding: 0.7rem 0.8rem;
+  background: #eff6ff;
+  color: #1e40af;
+  font-weight: 600;
+  line-height: 1;
+  white-space: nowrap;
+  text-align: center;
+  cursor: pointer;
+}
+
+.buy-points-button:hover {
+  background: #dbeafe;
+}
+
+.help-words-select {
+  max-width: 170px;
+  width: 100%;
+  border: 1px solid #bfdbfe;
+  border-radius: 10px;
+  padding: 0.65rem 0.7rem;
+  background: #ffffff;
+  color: var(--text);
+  font-size: 0.95rem;
+}
+
+.chat-form input {
+  width: 100%;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 0.7rem 0.8rem;
+  font-size: 1rem;
+}
+
+.chat-form .send-button {
+  width: 44px;
+  height: 44px;
+  display: inline-grid;
+  place-items: center;
+  border: 1px solid var(--primary);
+  border-radius: 10px;
+  padding: 0;
+  background: var(--primary);
+  color: #ffffff;
+  cursor: pointer;
+  transition: background-color 0.2s ease, border-color 0.2s ease, transform 0.15s ease;
+}
+
+.chat-form .send-button svg {
+  width: 20px;
+  height: 20px;
+}
+
+.chat-form .send-button path {
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.chat-form .send-button:hover {
+  border-color: var(--primary-hover);
+  background: var(--primary-hover);
+  transform: translateY(-1px);
+}
+
+.chat-form .send-button:disabled {
+  border-color: #93c5fd;
+  color: #ffffff;
+  background: #93c5fd;
+  transform: none;
+  cursor: not-allowed;
+}
+
+@media (max-width: 620px) {
+  .chat-app {
+    width: 100vw;
+    height: 100vh;
+    border-radius: 0;
+  }
+}
